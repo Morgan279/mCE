@@ -399,17 +399,17 @@ public class ExperimentExecutor {
         queryGraphs.add(generateQueryGraph3());
         queryGraphs.add(generateQueryGraph1());
         queryGraphs.add(generateQueryGraph2());
-        this.conductCaseStudy();
+        this.conductRandomSelect();
 
         log.info("switching FS dataset");
         this.switchFoursquareDataSet();
         queryGraphs = GraphGenerator.generateRandomQueryGraph(dataGraph);
-        this.conductCaseStudy();
+        this.conductRandomSelect();
 
         log.info("switching WD dataset");
         this.switchWikiDataSet();
         queryGraphs = GraphGenerator.generateRandomQueryGraph(dataGraph);
-        this.conductCaseStudy();
+        this.conductRandomSelect();
 
         log.info("switching GW dataset");
         this.switchGowallaDataSet();
@@ -417,7 +417,7 @@ public class ExperimentExecutor {
         queryGraphs.add(generateQueryGraph3());
         queryGraphs.add(generateQueryGraph1());
         queryGraphs.add(generateQueryGraph2());
-        this.conductCaseStudy();
+        this.conductRandomSelect();
 
         log.info("switching BK dataset");
         this.switchBrightkiteDataSet();
@@ -425,10 +425,10 @@ public class ExperimentExecutor {
         queryGraphs.add(generateQueryGraph3());
         queryGraphs.add(generateQueryGraph1());
         queryGraphs.add(generateQueryGraph2());
-        this.conductCaseStudy();
+        this.conductRandomSelect();
     }
 
-    private void conductCaseStudy() {
+    private void conductRandomSelect() {
         final int m = GraphGenerator.queryGraphCount;
         ExactMatchProcessor exactMatchProcessor = new ExactMatchProcessor(dataGraph, queryGraphs, vc);
 
